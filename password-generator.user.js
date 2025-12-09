@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  在检测到密码字段时，提供生成、填充和复制密码的功能
-// @author       You
+// @author       jwze
 // @match        *://*/*
 // @grant        GM_setValue
 // @grant        GM_getValue
@@ -11,6 +11,7 @@
 // @grant        GM_registerMenuCommand
 // @grant        GM_addStyle
 // @run-at       document-end
+// @license      MIT
 // ==/UserScript==
 
 (function() {
