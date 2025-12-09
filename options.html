@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>密码生成器</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            width: 320px;
+            padding: 15px;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .password-display-section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 15px;
+        }
+        h2 {
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            text-align: center;
+        }
+        #generated-password {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            word-break: break-all;
+            margin-bottom: 12px;
+            text-align: center;
+            padding: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+        .password-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s, opacity 0.2s;
+            white-space: nowrap;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #autofill-password {
+            background-color: #28a745;
+            color: white;
+            grid-column: 1 / -1; /* 占据整行 */
+        }
+        #copy-password {
+            background-color: #007bff;
+            color: white;
+        }
+        #regenerate-password {
+            background-color: #6c757d;
+            color: white;
+        }
+        .setting-item {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 12px 15px;
+        }
+        .setting-item label {
+            margin-left: 10px;
+            font-size: 14px;
+            flex-grow: 1;
+        }
+        .footer-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #add-to-blacklist {
+            background-color: #dc3545;
+            color: white;
+            width: 100%;
+        }
+        .text-center {
+            text-align: center;
+        }
+        #manage-blacklist {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        #manage-blacklist:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="password-display-section">
+            <h2>建议密码</h2>
+            <span id="generated-password">正在生成...</span>
+            <div class="password-actions">
+                <button id="autofill-password">自动填充</button>
+                <button id="copy-password">复制</button>
+                <button id="regenerate-password">换一个</button>
+            </div>
+        </div>
+
+        <div class="setting-item">
+            <input type="checkbox" id="include-symbols">
+            <label for="include-symbols">包含特殊字符 (@#$%)</label>
+        </div>
+
+        <div class="footer-actions">
+            <button id="add-to-blacklist">此网站不再提示</button>
+            <div class="text-center">
+                <a href="#" id="manage-blacklist">管理黑名单网站</a>
+            </div>
+        </div>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>

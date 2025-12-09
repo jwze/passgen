@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>自动密码生成器 - 黑名单管理</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            padding: 20px;
+            width: 450px;
+            background-color: #f4f7f6;
+            color: #333;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        #blacklist-container {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #blacklist-container li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        #blacklist-container li:last-child {
+            border-bottom: none;
+        }
+        #blacklist-container li .domain {
+            font-weight: 500;
+            color: #333;
+            word-break: break-all;
+            flex-grow: 1;
+        }
+        #blacklist-container li button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s, opacity 0.2s;
+            font-size: 13px;
+            margin-left: 15px;
+        }
+        #blacklist-container li button:hover {
+            background-color: #c82333;
+        }
+        #empty-message {
+            text-align: center;
+            color: #888;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>黑名单管理</h1>
+    <p>您可以在这里管理不再提示生成密码的网站列表。</p>
+
+    <ul id="blacklist-container">
+        <!-- 黑名单项目将由 JS 动态插入 -->
+    </ul>
+
+    <div id="empty-message" style="display: none;">
+        当前没有被屏蔽的网站。
+    </div>
+
+    <script src="blacklist_options.js"></script>
+</body>
+</html>

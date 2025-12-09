@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "自动密码生成器",
+  "version": "1.0",
+  "description": "在检测到密码字段时，提供生成、填充和复制密码的功能。",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "自动密码生成器",
+    "default_popup": "options.html"
+  },
+  "options_page": "blacklist_options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/icon16.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

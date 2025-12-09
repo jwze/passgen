@@ -1,0 +1,159 @@
+/** 
+ * =================================================================
+ * CSS Isolation Reset (Final, Aggressive Version with !important)
+ * For direct injection into a <style> tag.
+ * =================================================================
+ */
+
+/* 密码提示框的根容器 */
+#password-prompt {
+    position: relative !important;
+    background-color: #ffffff !important;
+    border: 1px solid #dcdcdc !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    padding: 12px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    color: #333 !important;
+    min-width: 300px !important;
+    max-width: 400px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* 对内部所有元素进行更温和的重置和 box-sizing 强制 */
+#password-prompt * {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    outline: 0 !important;
+    font-size: 100% !important;
+    vertical-align: baseline !important;
+    background: transparent !important;
+    box-sizing: border-box !important;
+    color: inherit !important;
+    font-family: inherit !important;
+    line-height: inherit !important;
+    text-decoration: none !important;
+    transform: none !important;
+    z-index: auto !important;
+    position: static !important;
+}
+
+/* 密码显示区域 */
+#password-prompt .password-display {
+    display: block !important;
+    padding: 8px !important;
+    background-color: #f5f5f5 !important;
+    border-radius: 4px !important;
+    word-wrap: break-word !important;
+    text-align: center !important;
+}
+
+#password-prompt .password-display strong {
+    display: inline !important;
+    margin-right: 5px !important;
+    color: #555 !important;
+    font-weight: bold !important;
+}
+
+#password-prompt #generated-password {
+    display: inline !important;
+    font-weight: bold !important;
+    color: #007bff !important;
+}
+
+/* 密码设置区域 */
+#password-prompt .password-settings {
+    display: flex !important;
+    align-items: center !important;
+    padding: 8px !important;
+    border-top: 1px solid #eee !important;
+    border-bottom: 1px solid #eee !important;
+    font-size: 13px !important;
+}
+
+#password-prompt .password-settings input[type="checkbox"] {
+    display: inline-block !important;
+    width: 14px !important;
+    height: 14px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    -webkit-appearance: checkbox !important;
+    appearance: checkbox !important;
+}
+
+#password-prompt .password-settings label {
+    display: inline-block !important;
+    margin-left: 6px !important;
+    color: #555 !important;
+    cursor: pointer !important;
+    font-weight: normal !important;
+}
+
+/* 按钮操作区域 - 强制显示 */
+#password-prompt .password-actions {
+    display: flex !important;
+    visibility: visible !important;
+    justify-content: space-around !important;
+    gap: 8px !important;
+}
+
+/* 统一按钮样式 - 强制显示 */
+#password-prompt button {
+    display: block !important;
+    visibility: visible !important;
+    flex-grow: 1 !important;
+    padding: 8px 12px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5px !important;
+    background-color: #f0f0f0 !important;
+    color: #222 !important;
+    cursor: pointer !important;
+    font-size: 13px !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    margin: 0 !important;
+    height: auto !important;
+    width: auto !important;
+}
+
+#password-prompt button:hover {
+    background-color: #e0e0e0 !important;
+    border-color: #bbb !important;
+    color: #000 !important;
+}
+
+/* “同意”按钮的特殊样式 */
+#password-prompt #fill-password {
+    background-color: #28a745 !important;
+    color: white !important;
+    border-color: #28a745 !important;
+}
+
+#password-prompt #fill-password:hover {
+    background-color: #218838 !important;
+    border-color: #1e7e34 !important;
+}
+
+/* “不再提示”按钮的特殊样式 */
+#password-prompt #blacklist-site {
+    background-color: #f44336 !important;
+    color: white !important;
+    border-color: #f44336 !important;
+}
+
+#password-prompt #blacklist-site:hover {
+    background-color: #d32f2f !important;
+    border-color: #c62828 !important;
+}
+
